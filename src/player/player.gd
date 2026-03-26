@@ -99,11 +99,17 @@ var _on_wall: bool = false: # This variable mustn't be edited manually
 
 @onready var _default_shape_scale: Vector2 = shape.scale
 
+var can_double_jump : bool = true
+
 func _physics_process(_delta: float) -> void:
 	_on_wall = is_on_wall()
 	
 	logic_spe()
-		
+
+func try_double_jump() -> void:
+	if Input.is_action_just_pressed("jump") and can_double_jump and Global.doublejump_unlock:
+		jump()
+		can_double_jump = false	
 
 func get_facing_dir() -> float:
 	return -1.0 if flip_h else 1.0

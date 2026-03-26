@@ -9,6 +9,7 @@ extends Node2D
 @onready var info_bonus: RichTextLabel = $Node2D/info_bonus
 @onready var sprintsprite: Sprite2D = $Node2D/sprites/sprintsprite
 @onready var dashsprite: Sprite2D = $Node2D/sprites/dashsprite
+@onready var doublejump: Sprite2D = $Node2D/sprites/doublejump
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,6 +24,10 @@ func _ready() -> void:
 		if type_bonus == "dash":
 			info_bonus.text = "[color=#FFFFFF]You can now dash with right click or RT button![/color]"
 			dashsprite.show()
+	if !Global.doublejump_unlock:
+		if type_bonus == "doublejump":
+			info_bonus.text = "[color=#FFFFFF]You can now double jump! souviens-toi[/color]"
+			doublejump.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,4 +46,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 		if !Global.dash_unlock and type_bonus == "dash":
 			Global.dash_unlock = true
+			anim()
+			
+		if !Global.doublejump_unlock and type_bonus == "doublejump":
+			Global.doublejump_unlock = true
 			anim()

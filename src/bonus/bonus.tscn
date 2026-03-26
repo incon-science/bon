@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://mscdt2l6ixx3" path="res://src/bonus/bonus.gd" id="1_k404d"]
 [ext_resource type="Texture2D" uid="uid://c84dxhfcuhtmd" path="res://sprites/sprint2.png" id="2_k404d"]
 [ext_resource type="Texture2D" uid="uid://c1pwixmon4bp2" path="res://sprites/dash1.png" id="3_yyq72"]
+[ext_resource type="Texture2D" uid="uid://ctef644vqx5ad" path="res://sprites/doublejump.png" id="4_whhxl"]
 
 [sub_resource type="Animation" id="Animation_yyq72"]
 length = 0.001
@@ -172,6 +173,11 @@ texture = ExtResource("1_ea6r3")
 visible = false
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_yyq72")
+
+[node name="doublejump" type="Sprite2D" parent="Node2D/sprites" unique_id=2089020610]
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_whhxl")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D/sprites" unique_id=1329979185]
 visible = false

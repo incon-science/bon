@@ -47,12 +47,16 @@ func creer_ground():
 func _ready() -> void:
 	display_list_cadavre()
 	
-	#player.global_position = Vector2(0,-2876.0)
+	if !Global.debug_mod: player.global_position = Vector2(0,-2876.0)
 	creer_ground()
 
-	canvas_modulate.hide()
-	player.hide()
-	player.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	#to avoid intro de merde
+	if !Global.debug_mod:
+		canvas_modulate.hide()
+		player.hide()
+		player.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	lvl_2.hide()
 	lvl_2.process_mode = Node.PROCESS_MODE_DISABLED
 	paralaxmulticlolor.hide()

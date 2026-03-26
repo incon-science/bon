@@ -14,3 +14,5 @@ func _physics_update(delta: float) -> void:
 		switch_to("AirEntryState")
 	elif player.velocity.x:
 		switch_to("RunState")
+		
+	player.can_double_jump = true

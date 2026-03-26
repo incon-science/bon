@@ -6,3 +6,17 @@ res://shaders/starfield.gdshader
 res://src/global.gd
 res://src/elements/cube.tscn
 res://src/elements/cube.gd
+res://src/player/player.tscn
+res://src/levels/meta_room_piece.tscn
+res://src/platforms/2_pt_move.tscn
+res://src/platforms/2_pt_move.gd
+res://src/levels/blackwhite_room.tscn
+res://src/bonus/bonus.gd
+res://src/bonus/bonus.tscn
+res://src/levels/room_blueprint.gd
+res://src/player/player.gd
+res://src/player/states/fall_state.gd
+res://src/player/states/jump_state.gd
+res://src/player/states/wall_jump_state.gd
+res://src/player/states/idle_state.gd
+res://src/player/states/run_state.gd

@@ -834,6 +834,7 @@ emitting = false
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
+animation = &"attack"
 autoplay = "idle"
 script = ExtResource("14_5efpn")
 
@@ -921,7 +922,7 @@ offset_left = -224.0
 offset_top = -150.0
 offset_right = 225.0
 offset_bottom = -101.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 27
 text = "PRESS START TO RELOAD"
 horizontal_alignment = 1

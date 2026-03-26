@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://iyg0q8tiaeyv" path="res://sprites/lol rndr.png" id="44_ppux1"]
 [ext_resource type="Shader" uid="uid://cwj6ts0pc7k6g" path="res://shaders/verticalwhiterain.gdshader" id="46_5ihcl"]
 [ext_resource type="PackedScene" uid="uid://bdd03axytgixu" path="res://src/platforms/damage_block.tscn" id="46_7f7j5"]
+[ext_resource type="PackedScene" uid="uid://b3fmlkgwi6rw5" path="res://src/platforms/2_pt_move.tscn" id="47_1tqiw"]
 [ext_resource type="PackedScene" uid="uid://denjct5e4x1jd" path="res://src/elements/cadavre.tscn" id="47_5ihcl"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_qrlky"]
@@ -200,6 +201,14 @@ colors = PackedColorArray(0.25, 0.25, 0.25, 0, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f4kdv"]
 gradient = SubResource("Gradient_41y7b")
+
+[sub_resource type="Gradient" id="Gradient_73yqq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tkwxf"]
+gradient = SubResource("Gradient_73yqq")
+width = 4000
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="Gradient" id="Gradient_f4kdv"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
@@ -410,6 +419,16 @@ gradient = SubResource("Gradient_1tqiw")
 height = 5000
 fill_to = Vector2(0, 1)
 
+[sub_resource type="Gradient" id="Gradient_tkwxf"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k2shy"]
+gradient = SubResource("Gradient_tkwxf")
+width = 2000
+height = 1
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ihcl"]
 size = Vector2(2560.488, 4246.0107)
 
@@ -426,6 +445,7 @@ shader_parameter/trail_size = 5.0
 shader_parameter/brightness = 10.0
 
 [sub_resource type="Gradient" id="Gradient_5ihcl"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_1tqiw"]
 gradient = SubResource("Gradient_5ihcl")
@@ -435,6 +455,9 @@ size = Vector2(26472.516, 3367.3008)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6lma"]
 size = Vector2(12165.242, 2751.58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73yqq"]
+size = Vector2(16506.684, 3268.9854)
 
 [node name="room_blueprint" type="Node2D" unique_id=1528742533]
 script = ExtResource("1_76snk")
@@ -452,12 +475,12 @@ color = Color(0.40832946, 0.40832946, 0.40832946, 1)
 [node name="Player" parent="." unique_id=2070335124 instance=ExtResource("3_4j1ba")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(0, -2876)
+position = Vector2(4300.8066, 35.770508)
 
 [node name="cam" type="Node2D" parent="." unique_id=1498018793 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(50, -2630)
+position = Vector2(4350.8066, -124.22949)
 script = ExtResource("4_mu531")
 priority = 1
 follow_mode = 2
@@ -477,7 +500,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="cam2" type="Node2D" parent="." unique_id=390199709 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-50, -2630)
+position = Vector2(4250.8066, -124.22949)
 script = ExtResource("4_mu531")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -496,7 +519,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="camoffesetbottom" type="Node2D" parent="." unique_id=1643240695 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(50, -2876)
+position = Vector2(4350.8066, 35.770508)
 script = ExtResource("4_mu531")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -512,7 +535,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="camoffesetbottom2" type="Node2D" parent="." unique_id=277007732 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-50, -2876)
+position = Vector2(4250.8066, 35.770508)
 script = ExtResource("4_mu531")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -528,7 +551,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="zoomcam" type="Node2D" parent="." unique_id=1299573748 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(0, -3036)
+position = Vector2(4300.8066, -124.22949)
 script = ExtResource("4_mu531")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -545,7 +568,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1039615960]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(50, -2630)
+position = Vector2(4350.8066, -124.22949)
 process_callback = 0
 limit_left = -2712
 limit_top = -2990
@@ -685,10 +708,6 @@ text = "Arrête de t'attacher à la réalité
 [node name="door_reverse" parent="lvl4" unique_id=1047860162 instance=ExtResource("15_wxahx")]
 position = Vector2(26042, 2488)
 
-[node name="sprint_bonus" parent="lvl4" unique_id=1577787271 instance=ExtResource("15_fynux")]
-position = Vector2(21509, 2124)
-type_bonus = "sprint"
-
 [node name="lvl1" type="Node2D" parent="." unique_id=300588503]
 
 [node name="paralaxmulticlolor" type="Parallax2D" parent="lvl1" unique_id=1615437823]
@@ -731,12 +750,13 @@ offset_right = 12660.0
 offset_bottom = 35.0
 texture = SubResource("GradientTexture2D_f4kdv")
 
-[node name="ColorRect" type="ColorRect" parent="lvl1/right-gradient" unique_id=2028401922]
+[node name="ColorRect" type="TextureRect" parent="lvl1/right-gradient" unique_id=1929606882]
 layout_mode = 0
 offset_left = 374.0
 offset_top = 181.0
-offset_right = 24025.0
+offset_right = 14968.754
 offset_bottom = 6173.0
+texture = SubResource("GradientTexture2D_tkwxf")
 
 [node name="colors_bg" type="Node2D" parent="lvl1" unique_id=1620225080]
 z_index = -1
@@ -753,14 +773,14 @@ offset_left = -3523.0
 offset_top = 36.0
 offset_right = 14469.592
 offset_bottom = 342.0
-color = Color(0.35531357, 0.35531357, 0.3553135, 1)
+color = Color(0.54896253, 0.5489626, 0.5489625, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="lvl1/colors_bg" unique_id=1392230140]
 offset_left = 14307.0
 offset_top = 36.0
 offset_right = 32299.592
 offset_bottom = 342.0
-color = Color(0.35531357, 0.35531357, 0.3553135, 1)
+color = Color(0.54901963, 0.54901963, 0.54901963, 1)
 
 [node name="Parallax2D2" type="Parallax2D" parent="lvl1" unique_id=1884114840]
 scroll_scale = Vector2(0, 1)
@@ -1455,13 +1475,6 @@ texture = ExtResource("36_q5tgx")
 position = Vector2(18569.25, -1386)
 shape = SubResource("RectangleShape2D_fynux")
 
-[node name="bonus" parent="lvl1" unique_id=715804290 instance=ExtResource("15_fynux")]
-position = Vector2(1288.7085, -433.7632)
-type_bonus = "dash"
-
-[node name="banane" parent="lvl1" unique_id=935544302 instance=ExtResource("39_ppux1")]
-position = Vector2(12862.587, -1523.9225)
-
 [node name="TRAPS" type="Node2D" parent="lvl1" unique_id=1752754461]
 
 [node name="damage_block" parent="lvl1/TRAPS" unique_id=1974418075 instance=ExtResource("46_7f7j5")]
@@ -1734,16 +1747,14 @@ shape = SubResource("RectangleShape2D_cd7fg")
 position = Vector2(0, -2934)
 
 [node name="Label" type="RichTextLabel" parent="intro" unique_id=2126303944]
-offset_left = -591.3976
+offset_left = 0.09875488
 offset_top = -2594.0
-offset_right = 592.66064
+offset_right = 589.7324
 offset_bottom = -2275.7617
 theme_override_colors/default_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
 theme_override_font_sizes/normal_font_size = 55
-text = "Écoute mieux
-la prochaine
-fois"
-horizontal_alignment = 2
+text = "Écoute mieux la prochaine fois"
+horizontal_alignment = 3
 vertical_alignment = 1
 
 [node name="lvl5" type="Node2D" parent="." unique_id=574120747]
@@ -1754,6 +1765,20 @@ offset_top = 5489.7476
 offset_right = 32800.75
 offset_bottom = 10489.748
 texture = SubResource("GradientTexture2D_73yqq")
+
+[node name="ColorRect" type="ColorRect" parent="lvl5" unique_id=117778481]
+offset_left = 30794.354
+offset_top = 7779.6533
+offset_right = 33479.684
+offset_bottom = 12267.286
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect3" type="TextureRect" parent="lvl5" unique_id=406025307]
+offset_left = 28794.03
+offset_top = 8015.3677
+offset_right = 30794.03
+offset_bottom = 12321.928
+texture = SubResource("GradientTexture2D_k2shy")
 
 [node name="camzoneoffset_lvl5" type="Area2D" parent="lvl5" unique_id=551414329]
 
@@ -1776,10 +1801,10 @@ position = Vector2(27758.86, 2799.0413)
 [node name="TextureRect" type="TextureRect" parent="lvl5" unique_id=1581605215]
 visible = false
 material = SubResource("ShaderMaterial_7f7j5")
-offset_left = 23489.186
-offset_top = 4087.0464
-offset_right = 28447.842
-offset_bottom = 6752.927
+offset_left = 5554.709
+offset_top = 9528.705
+offset_right = 10513.365
+offset_bottom = 12194.586
 texture = SubResource("GradientTexture1D_1tqiw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="lvl5" unique_id=1211112175]
@@ -1793,114 +1818,152 @@ text = "Si il faut te violer le cerveau un nombre infini de fois pour que tu com
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="damage_block" parent="lvl5" unique_id=736838537 instance=ExtResource("46_7f7j5")]
+[node name="PTS" type="Node2D" parent="lvl5" unique_id=2105975742]
+
+[node name="damage_block" parent="lvl5/PTS" unique_id=736838537 instance=ExtResource("46_7f7j5")]
 position = Vector2(26640.973, 6845.0513)
 
-[node name="damage_block2" parent="lvl5" unique_id=390216913 instance=ExtResource("46_7f7j5")]
+[node name="damage_block2" parent="lvl5/PTS" unique_id=390216913 instance=ExtResource("46_7f7j5")]
 position = Vector2(26434.2, 7378.068)
 
-[node name="damage_block3" parent="lvl5" unique_id=1277976992 instance=ExtResource("46_7f7j5")]
+[node name="damage_block3" parent="lvl5/PTS" unique_id=1277976992 instance=ExtResource("46_7f7j5")]
 position = Vector2(26342.3, 7832.97)
 
-[node name="damage_block4" parent="lvl5" unique_id=327673214 instance=ExtResource("46_7f7j5")]
+[node name="damage_block4" parent="lvl5/PTS" unique_id=327673214 instance=ExtResource("46_7f7j5")]
 position = Vector2(27022.357, 7681.336)
 
-[node name="damage_block5" parent="lvl5" unique_id=738259473 instance=ExtResource("46_7f7j5")]
+[node name="damage_block5" parent="lvl5/PTS" unique_id=738259473 instance=ExtResource("46_7f7j5")]
 position = Vector2(27288.867, 7681.336)
 
-[node name="damage_block7" parent="lvl5" unique_id=1195960886 instance=ExtResource("46_7f7j5")]
+[node name="damage_block7" parent="lvl5/PTS" unique_id=1195960886 instance=ExtResource("46_7f7j5")]
 position = Vector2(26613.773, 8406.271)
 
-[node name="damage_block8" parent="lvl5" unique_id=2026212422 instance=ExtResource("46_7f7j5")]
+[node name="damage_block8" parent="lvl5/PTS" unique_id=2026212422 instance=ExtResource("46_7f7j5")]
 position = Vector2(27421.662, 8657.865)
 
-[node name="damage_block11" parent="lvl5" unique_id=78793200 instance=ExtResource("46_7f7j5")]
+[node name="damage_block12" parent="lvl5/PTS" unique_id=1703984324 instance=ExtResource("46_7f7j5")]
+position = Vector2(27421.662, 8490.275)
+
+[node name="damage_block11" parent="lvl5/PTS" unique_id=78793200 instance=ExtResource("46_7f7j5")]
 position = Vector2(27421.662, 8829.052)
 
-[node name="damage_block9" parent="lvl5" unique_id=1897215685 instance=ExtResource("46_7f7j5")]
+[node name="damage_block9" parent="lvl5/PTS" unique_id=1897215685 instance=ExtResource("46_7f7j5")]
 position = Vector2(27062.488, 8805.709)
 
-[node name="damage_block10" parent="lvl5" unique_id=1415677235 instance=ExtResource("46_7f7j5")]
+[node name="damage_block10" parent="lvl5/PTS" unique_id=1415677235 instance=ExtResource("46_7f7j5")]
 position = Vector2(26904.27, 8805.709)
 
-[node name="damage_block6" parent="lvl5" unique_id=77470250 instance=ExtResource("46_7f7j5")]
+[node name="damage_block6" parent="lvl5/PTS" unique_id=77470250 instance=ExtResource("46_7f7j5")]
 position = Vector2(26877.816, 7837.7344)
 
-[node name="platform" parent="lvl5" unique_id=160675585 instance=ExtResource("8_ltygr")]
+[node name="platform" parent="lvl5/PTS" unique_id=160675585 instance=ExtResource("8_ltygr")]
 position = Vector2(26021.498, 5637.338)
 scale = Vector2(2, 2)
 
-[node name="platform2" parent="lvl5" unique_id=1567438414 instance=ExtResource("8_ltygr")]
+[node name="platform2" parent="lvl5/PTS" unique_id=1567438414 instance=ExtResource("8_ltygr")]
 position = Vector2(25827.486, 5882.706)
 scale = Vector2(3, 3)
 
-[node name="platform3" parent="lvl5" unique_id=1576336336 instance=ExtResource("8_ltygr")]
+[node name="platform3" parent="lvl5/PTS" unique_id=1576336336 instance=ExtResource("8_ltygr")]
 position = Vector2(26224.07, 5988.2715)
 scale = Vector2(3, 3)
 
-[node name="platform4" parent="lvl5" unique_id=1710530506 instance=ExtResource("8_ltygr")]
+[node name="platform4" parent="lvl5/PTS" unique_id=1710530506 instance=ExtResource("8_ltygr")]
 position = Vector2(25602.092, 6165.1646)
 scale = Vector2(3, 3)
 
-[node name="platform5" parent="lvl5" unique_id=670276018 instance=ExtResource("8_ltygr")]
+[node name="platform5" parent="lvl5/PTS" unique_id=670276018 instance=ExtResource("8_ltygr")]
 position = Vector2(25975.852, 6533.2173)
 scale = Vector2(4, 4)
 
-[node name="platform13" parent="lvl5" unique_id=1249654610 instance=ExtResource("8_ltygr")]
+[node name="platform13" parent="lvl5/PTS" unique_id=1249654610 instance=ExtResource("8_ltygr")]
 position = Vector2(27217.31, 8716.056)
 scale = Vector2(2, 2)
 
-[node name="platform14" parent="lvl5" unique_id=599619289 instance=ExtResource("8_ltygr")]
+[node name="platform19" parent="lvl5/PTS" unique_id=151851847 instance=ExtResource("8_ltygr")]
+position = Vector2(30272.969, 9111.224)
+scale = Vector2(2, 2)
+
+[node name="platform20" parent="lvl5/PTS" unique_id=805816286 instance=ExtResource("8_ltygr")]
+position = Vector2(30052.742, 9304.213)
+scale = Vector2(2, 2)
+
+[node name="platform21" parent="lvl5/PTS" unique_id=956403916 instance=ExtResource("8_ltygr")]
+position = Vector2(30259.186, 9386.923)
+scale = Vector2(2, 2)
+
+[node name="platform22" parent="lvl5/PTS" unique_id=1631402616 instance=ExtResource("8_ltygr")]
+position = Vector2(30424.605, 9295.023)
+scale = Vector2(2, 2)
+
+[node name="platform14" parent="lvl5/PTS" unique_id=599619289 instance=ExtResource("8_ltygr")]
 position = Vector2(27612.766, 8815.146)
 scale = Vector2(2, 2)
 
-[node name="platform15" parent="lvl5" unique_id=2072322855 instance=ExtResource("8_ltygr")]
+[node name="platform15" parent="lvl5/PTS" unique_id=2072322855 instance=ExtResource("8_ltygr")]
 position = Vector2(27765.121, 8815.146)
 scale = Vector2(2, 2)
 
-[node name="platform16" parent="lvl5" unique_id=691299212 instance=ExtResource("8_ltygr")]
+[node name="platform16" parent="lvl5/PTS" unique_id=691299212 instance=ExtResource("8_ltygr")]
 position = Vector2(27902.795, 8930.686)
 scale = Vector2(2, 2)
 
-[node name="platform17" parent="lvl5" unique_id=1817183650 instance=ExtResource("8_ltygr")]
+[node name="platform17" parent="lvl5/PTS" unique_id=1817183650 instance=ExtResource("8_ltygr")]
 position = Vector2(28055.15, 8930.686)
 scale = Vector2(2, 2)
 
-[node name="platform18" parent="lvl5" unique_id=1746513442 instance=ExtResource("8_ltygr")]
-position = Vector2(28341.373, 8925.97)
-scale = Vector2(2, 2)
-
-[node name="platform19" parent="lvl5" unique_id=212267936 instance=ExtResource("8_ltygr")]
-position = Vector2(28493.729, 8925.97)
-scale = Vector2(2, 2)
-
-[node name="platform6" parent="lvl5" unique_id=2102505205 instance=ExtResource("8_ltygr")]
+[node name="platform6" parent="lvl5/PTS" unique_id=2102505205 instance=ExtResource("8_ltygr")]
 position = Vector2(26294.842, 6882.5874)
 scale = Vector2(4, 4)
 
-[node name="platform7" parent="lvl5" unique_id=958488371 instance=ExtResource("8_ltygr")]
+[node name="platform7" parent="lvl5/PTS" unique_id=958488371 instance=ExtResource("8_ltygr")]
 position = Vector2(26973.885, 6882.5874)
 scale = Vector2(4, 4)
 
-[node name="platform8" parent="lvl5" unique_id=722639101 instance=ExtResource("8_ltygr")]
+[node name="platform8" parent="lvl5/PTS" unique_id=722639101 instance=ExtResource("8_ltygr")]
 position = Vector2(26036.512, 7250.186)
 scale = Vector2(4, 4)
 
-[node name="platform9" parent="lvl5" unique_id=945981466 instance=ExtResource("8_ltygr")]
+[node name="platform9" parent="lvl5/PTS" unique_id=945981466 instance=ExtResource("8_ltygr")]
 position = Vector2(26702.785, 7654.544)
 scale = Vector2(4, 4)
 
-[node name="platform10" parent="lvl5" unique_id=18215513 instance=ExtResource("8_ltygr")]
+[node name="platform10" parent="lvl5/PTS" unique_id=18215513 instance=ExtResource("8_ltygr")]
 position = Vector2(27208.234, 8022.142)
 scale = Vector2(4, 4)
 
-[node name="platform11" parent="lvl5" unique_id=1582294664 instance=ExtResource("8_ltygr")]
+[node name="platform11" parent="lvl5/PTS" unique_id=1582294664 instance=ExtResource("8_ltygr")]
 position = Vector2(26946.32, 8265.676)
 scale = Vector2(4, 4)
 
-[node name="platform12" parent="lvl5" unique_id=1222475380 instance=ExtResource("8_ltygr")]
+[node name="platform12" parent="lvl5/PTS" unique_id=1222475380 instance=ExtResource("8_ltygr")]
 position = Vector2(27225.143, 8578.74)
 scale = Vector2(3, 3)
+
+[node name="platform18" parent="lvl5/PTS" unique_id=493712995 instance=ExtResource("8_ltygr")]
+position = Vector2(29908.5, 9002.429)
+scale = Vector2(3, 3)
+
+[node name="2pt_move" parent="lvl5/PTS" unique_id=546104117 instance=ExtResource("47_1tqiw")]
+position = Vector2(27416.75, 8925.546)
+
+[node name="damage_block13" parent="lvl5/PTS" unique_id=908751794 instance=ExtResource("46_7f7j5")]
+position = Vector2(28776.715, 9103.362)
+
+[node name="damage_block14" parent="lvl5/PTS" unique_id=1048668426 instance=ExtResource("46_7f7j5")]
+position = Vector2(28921.629, 9103.362)
+
+[node name="damage_block15" parent="lvl5/PTS" unique_id=739499420 instance=ExtResource("46_7f7j5")]
+position = Vector2(29065.906, 9103.362)
+
+[node name="damage_block16" parent="lvl5/PTS" unique_id=878684730 instance=ExtResource("46_7f7j5")]
+position = Vector2(29210.818, 9103.362)
+
+[node name="damage_block17" parent="lvl5/PTS" unique_id=1131088591 instance=ExtResource("46_7f7j5")]
+position = Vector2(29355.484, 9103.362)
+
+[node name="damage_block18" parent="lvl5/PTS" unique_id=584999366 instance=ExtResource("46_7f7j5")]
+position = Vector2(29500.396, 9103.362)
 
 [node name="portal" parent="lvl5" unique_id=871669185 node_paths=PackedStringArray("portal_target") instance=ExtResource("21_n78m8")]
 position = Vector2(27269.203, 8637.113)
@@ -1922,9 +1985,28 @@ shape = SubResource("RectangleShape2D_ppux1")
 position = Vector2(17593.816, 5406.9697)
 shape = SubResource("RectangleShape2D_y6lma")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DEATHZONE" unique_id=940937821]
+position = Vector2(28869.428, 11751.258)
+shape = SubResource("RectangleShape2D_73yqq")
+
 [node name="cadavre" parent="." unique_id=258405330 instance=ExtResource("47_5ihcl")]
 position = Vector2(-503.16162, -11202.822)
 scale = Vector2(0.55, 0.55)
+
+[node name="banane" parent="." unique_id=935544302 instance=ExtResource("39_ppux1")]
+position = Vector2(12862.587, -1523.9225)
+
+[node name="bonus2" parent="." unique_id=715804290 instance=ExtResource("15_fynux")]
+position = Vector2(1288.7085, -433.7632)
+type_bonus = "dash"
+
+[node name="sprint_bonus" parent="." unique_id=1577787271 instance=ExtResource("15_fynux")]
+position = Vector2(4132.574, 2900.3467)
+type_bonus = "sprint"
+
+[node name="bonus" parent="." unique_id=1732226817 instance=ExtResource("15_fynux")]
+position = Vector2(30259.777, 9317.01)
+type_bonus = "doublejump"
 
 [connection signal="body_entered" from="lvl4/cam_off_zone_lvl4" to="." method="_on_cam_off_zone_lvl_4_body_entered"]
 [connection signal="body_exited" from="lvl4/cam_off_zone_lvl4" to="." method="_on_cam_off_zone_lvl_4_body_exited"]
