@@ -1,11 +1,16 @@
 extends Node
 
 var nb_fractal:int = 0
+
 var door_opened:bool = false
 var door2_opened:bool = false
+var cube_opened : bool = false
+
 var arc_en_ciel:bool = false
+
 var dash_unlock:bool = false
 var sprint_unlock:bool = false
+
 var banane:bool =false
 
 var list_des_morts: Array[Vector2]
@@ -23,8 +28,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("start"):
 		get_tree().reload_current_scene()
 		nb_fractal = 0
-		door_opened = false
-		door2_opened = false
 	
 		
 		

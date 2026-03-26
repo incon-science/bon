@@ -5,7 +5,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $Sprite2D/AnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-var opened : bool = false
+
 
 @onready var label: Label = $locklayer/Node2D/Label
 @onready var label_2: Label = $locklayer/Node2D/Label2
@@ -34,6 +34,8 @@ var y_select : int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	touche_prec.modulate.a = 0.3
+	
+	if Global.cube_opened:animation_player.play("up_door")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -73,18 +75,18 @@ func _process(delta: float) -> void:
 			res.text = ""
 			
 	if res.text == "1972":
-		if !opened:
+		if !Global.cube_opened:
 			fadeoutdigit.play("new_animation")
 			await get_tree().create_timer(1).timeout
 			locklayer.hide()
 			
 			animation_player.play("up_door")
-			opened = true
+			Global.cube_opened = true
 			player.dead_ = false
 		
 func _on_openlockzone_body_entered(body: Node2D) -> void:
 	if body is Player :
-		if !opened:
+		if !Global.cube_opened:
 			locklayer.show()
 			#line_edit.grab_focus()
 			body.dead_=true

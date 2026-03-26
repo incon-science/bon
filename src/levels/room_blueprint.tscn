@@ -1858,6 +1858,22 @@ scale = Vector2(2, 2)
 position = Vector2(27765.121, 8815.146)
 scale = Vector2(2, 2)
 
+[node name="platform16" parent="lvl5" unique_id=691299212 instance=ExtResource("8_ltygr")]
+position = Vector2(27902.795, 8930.686)
+scale = Vector2(2, 2)
+
+[node name="platform17" parent="lvl5" unique_id=1817183650 instance=ExtResource("8_ltygr")]
+position = Vector2(28055.15, 8930.686)
+scale = Vector2(2, 2)
+
+[node name="platform18" parent="lvl5" unique_id=1746513442 instance=ExtResource("8_ltygr")]
+position = Vector2(28341.373, 8925.97)
+scale = Vector2(2, 2)
+
+[node name="platform19" parent="lvl5" unique_id=212267936 instance=ExtResource("8_ltygr")]
+position = Vector2(28493.729, 8925.97)
+scale = Vector2(2, 2)
+
 [node name="platform6" parent="lvl5" unique_id=2102505205 instance=ExtResource("8_ltygr")]
 position = Vector2(26294.842, 6882.5874)
 scale = Vector2(4, 4)
