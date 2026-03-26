@@ -380,10 +380,9 @@ func sprint_logic():
 
 func logic_spe():
 	
-	if Input.is_action_just_pressed("timeslow"):
+	Engine.time_scale = 1
+	if Input.is_action_pressed("timeslow"):
 			Engine.time_scale = 0.1
-	if Input.is_action_just_released("timeslow"):
-			Engine.time_scale = 1
 			
 	portal_logic()
 	respawn_logic()
@@ -451,10 +450,13 @@ func sprite_animation() -> void:
 		slide_particle.emitting = false
 		
 	if is_on_floor() :
-		if velocity.x < -150 or velocity.x > 150 :
-			try_play_new_anim("run")
+		if sprite.animation=="jumpground" and sprite.is_playing():
+			pass
 		else:
-			try_play_new_anim("idle")
+			if velocity.x < -150 or velocity.x > 150 :
+				try_play_new_anim("run")
+			else:
+				try_play_new_anim("idle")
 	
 	if velocity.y > 0.0:
 		"""if is_on_wall():
@@ -497,9 +499,10 @@ var last_floor_pos : Vector2
 func respawn_logic():
 	if is_on_floor_only():
 		if velocity.x >0 :
-			last_floor_pos = position - Vector2(50,0)
+			last_floor_pos = position - Vector2(30,0)
 		if velocity.x <0 :
-			last_floor_pos = position + Vector2(50,0)
+			last_floor_pos = position + Vector2(30,0)
+		last_floor_pos = last_floor_pos + Vector2(0,-30)
 			
 @onready var animated_sprite_for_teleport_shader: AnimatedSprite2D = $AnimatedSpriteForTeleportShader
 @onready var animation_player_for_teleport_shader: AnimationPlayer = $AnimatedSpriteForTeleportShader/AnimationPlayerForTeleportShader
@@ -533,8 +536,6 @@ func impact_logic_anim():
 		duplicate_sprite()
 		sprite.hide()
 		sprite_shader.show()
-	else :
-		Engine.time_scale = 1
 func duplicate_sprite():
 	sprite_shader.position = sprite.position
 	sprite_shader.rotation = sprite.rotation
@@ -545,7 +546,7 @@ func duplicate_sprite():
 
 @onready var deathspriteanim: AnimatedSprite2D = $deathspriteanim
 @onready var point_light_2d: PointLight2D = $PointLight2D
-@onready var restart_txt: RichTextLabel = $restart_txt
+@onready var restart_txt: Node2D = $restart_txt
 
 var dead_ : bool = false
 func play_death_anim():
@@ -553,7 +554,9 @@ func play_death_anim():
 	sprite.hide()
 	point_light_2d.hide()
 	deathspriteanim.show()
+	
 	deathspriteanim.play("default")
+		
 	#deathspriteanim.material.set("shader_parameter/hit_effect",0.0);
 	
 	#restart_txt.show()

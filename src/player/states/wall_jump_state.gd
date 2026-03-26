@@ -4,6 +4,7 @@ extends PlayerState
 func _enter(_previous_state: State) -> void:
 	player.stop_jump_timers()
 	player.dash_allowed = true
+	player.can_double_jump = true
 
 func _physics_update(delta: float) -> void:
 	player.apply_gravity(delta)

@@ -642,6 +642,18 @@ region = Rect2(798, 931, 133, 133)
 atlas = ExtResource("14_4uy46")
 region = Rect2(931, 931, 133, 133)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjw5d"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(133, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hgpa"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(266, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcg4k"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(399, 931, 133, 133)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tjw5d"]
 animations = [{
 "frames": [{
@@ -668,6 +680,20 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjw5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hgpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcg4k")
+}],
+"loop": false,
+"name": &"wall_only",
 "speed": 5.0
 }]
 
@@ -834,7 +860,7 @@ emitting = false
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
 script = ExtResource("14_5efpn")
 
@@ -914,10 +940,20 @@ material = SubResource("ShaderMaterial_j2873")
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_tjw5d")
-frame_progress = 1.0
+animation = &"wall_only"
 
-[node name="restart_txt" type="RichTextLabel" parent="." unique_id=310487557]
+[node name="restart_txt" type="Node2D" parent="." unique_id=1599983111]
 modulate = Color(1, 1, 1, 0)
+z_index = 1000
+
+[node name="ColorRect" type="ColorRect" parent="restart_txt" unique_id=655029408]
+offset_left = -168.0
+offset_top = -144.0
+offset_right = 167.0
+offset_bottom = -104.0
+color = Color(0, 0, 0, 1)
+
+[node name="restart_txt" type="RichTextLabel" parent="restart_txt" unique_id=310487557]
 offset_left = -224.0
 offset_top = -150.0
 offset_right = 225.0

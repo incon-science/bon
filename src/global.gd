@@ -1,6 +1,6 @@
 extends Node
 
-var debug_mod:bool=false
+var debug_mod:bool=true
 
 var nb_fractal:int = 0
 
@@ -26,7 +26,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	doublejump_unlock = true
+		
+	
 	if debug_mod:
 		nb_fractal=3
 		dash_unlock = true
@@ -35,7 +36,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("start"):
 		get_tree().reload_current_scene()
 		nb_fractal = 0
-	
+		banane=false
 		
 		
 		

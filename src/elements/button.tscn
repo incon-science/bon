@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://ca0qqvc5pjlky"]
 
-[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="1_ab8rq"]
 [ext_resource type="Script" uid="uid://dwg2pohsrlcyf" path="res://src/elements/button.gd" id="1_ihcdu"]
+[ext_resource type="Texture2D" uid="uid://b5gmrdmjvgxag" path="res://sprites/rooms/ground_pt.png" id="2_wl5o2"]
 [ext_resource type="Texture2D" uid="uid://csuiewxwaqi25" path="res://sprites/btn1.png" id="4_wl5o2"]
 [ext_resource type="Texture2D" uid="uid://viwuftj2virg" path="res://sprites/btn2.png" id="5_utlp5"]
-[ext_resource type="AudioStream" uid="uid://cbhvpxklqpjsk" path="res://sounds/humordome-magic-button-click-453258.mp3" id="5_wl5o2"]
+[ext_resource type="AudioStream" uid="uid://ij7h5h6vm1qw" path="res://sounds/microwave-button-82493.mp3" id="5_wl5o2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utlp5"]
+size = Vector2(125, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab8rq"]
 size = Vector2(33, 25)
@@ -58,8 +61,17 @@ metadata/_snap_enabled = true
 [node name="button" type="Area2D" unique_id=1067572409]
 script = ExtResource("1_ihcdu")
 
-[node name="pt_blueprint" parent="." unique_id=920875960 instance=ExtResource("1_ab8rq")]
-position = Vector2(3, 28)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=542832843]
+position = Vector2(3.046814, -3.2644348)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1241402372]
+position = Vector2(0, 38.999996)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_wl5o2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=545169149]
+position = Vector2(1.5, 43.252106)
+shape = SubResource("RectangleShape2D_utlp5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=529146898]
 position = Vector2(3.5, -0.5)
@@ -77,11 +89,11 @@ texture = ExtResource("5_utlp5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2" unique_id=726804004]
 libraries/ = SubResource("AnimationLibrary_vvdvm")
-speed_scale = 2.0
+speed_scale = 4.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1180587349]
 stream = ExtResource("5_wl5o2")
-volume_db = -10.0
+volume_db = -12.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=997509681]
 position = Vector2(4, 1.0000005)

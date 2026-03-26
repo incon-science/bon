@@ -33,6 +33,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		audio_stream_player_2d.play()
 		Input.start_joy_vibration(0,0.5,0.5)
 		body.play_death_anim()
+		body.shakecamtimer.start()
 
 	
 func _on_timer_timeout() -> void:

@@ -61,24 +61,44 @@ func _ready() -> void:
 	lvl_2.process_mode = Node.PROCESS_MODE_DISABLED
 	paralaxmulticlolor.hide()
 
-func music_player_logic():
-	if player.position.x > 14081 and player.position.y > 372 :
-		if audio_stream_player.get_stream_playback().get_current_clip_index() !=1:
-			audio_stream_player.get_stream_playback().switch_to_clip_by_name("noise")
-			audio_stream_player.volume_db=-10.0
-	
-	if player.position.x < -3562:
-		if audio_stream_player.get_stream_playback().get_current_clip_index() !=1:
-			audio_stream_player.get_stream_playback().switch_to_clip_by_name("noise")
-			audio_stream_player.volume_db=-10.0
-			
-	if player.position.x > -3562:
-		if lvl_2_loaded :
-			if audio_stream_player.get_stream_playback().get_current_clip_index() !=2:
-				audio_stream_player.get_stream_playback().switch_to_clip_by_name("stimulation")
-				audio_stream_player.volume_db=-15.0
-	
 
+var index_music : int = 0
+var label_music : String = ""
+var volume_music : float = -10.0
+func music_player_logic():
+	if player.global_position.x < -3562:
+		index_music=1
+		label_music="noise"
+		
+	if !lvl_2_loaded:
+		if player.global_position.x > -3562:
+			index_music=0
+			label_music="portal"
+		
+	if lvl_2_loaded:		
+		if player.global_position.x > -3562 and player.global_position.x < 1310:
+			index_music=2
+			label_music="stimulation"
+		if player.global_position.x > 1310:
+			index_music=1
+			label_music="noise"
+			
+	if player.global_position.x > 3485 and player.global_position.y > 3002 and player.global_position.x < 4300 and player.global_position.y < 3300:
+		index_music=0
+		label_music="portal"
+		
+	if player.position.y > 372 :
+		if player.global_position.x > 14081 and player.global_position.x < 27444:
+			index_music=1
+			label_music="noise"
+		if player.global_position.x > 27444:
+			index_music=3
+			label_music="intense"
+			
+	if audio_stream_player.get_stream_playback().get_current_clip_index() !=index_music:
+		audio_stream_player.get_stream_playback().switch_to_clip_by_name(label_music)
+		audio_stream_player.volume_db=volume_music
+	
 	
 func slowvoid_logic():
 	var limit = - 5555
