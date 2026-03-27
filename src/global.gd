@@ -1,6 +1,6 @@
 extends Node
 
-var debug_mod:bool=true
+var debug_mod:bool=false
 
 var nb_fractal:int = 0
 
@@ -26,7 +26,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		
 	if debug_mod:
 		nb_fractal=3
 		dash_unlock = true

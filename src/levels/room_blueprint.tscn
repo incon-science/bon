@@ -466,7 +466,7 @@ volume_db = -10.0
 environment = SubResource("Environment_vb8r4")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1364036370]
-color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+color = Color(0.25929385, 0.25929365, 0.2592938, 1)
 
 [node name="Player" parent="." unique_id=2070335124 instance=ExtResource("3_4j1ba")]
 unique_name_in_owner = true
