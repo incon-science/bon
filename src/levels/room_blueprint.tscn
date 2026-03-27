@@ -1,13 +1,11 @@
-[gd_scene format=4 uid="uid://dy80i5m5jbd5"]
+[gd_scene format=3 uid="uid://dy80i5m5jbd5"]
 
 [ext_resource type="Script" uid="uid://cfsrsjdfacr0o" path="res://src/levels/room_blueprint.gd" id="1_76snk"]
 [ext_resource type="Texture2D" uid="uid://6sperlai5t1p" path="res://sprites/rooms/ground.png" id="1_p0cym"]
 [ext_resource type="AudioStream" uid="uid://bm0hl1jvxub7r" path="res://sounds/musics/Portal Soundtrack  Self Esteem Fund.mp3" id="2_01erx"]
 [ext_resource type="Shader" uid="uid://cylkj8wo88c1h" path="res://shaders/burn.gdshader" id="2_7rpky"]
-[ext_resource type="Texture2D" uid="uid://cbca72wf68jj6" path="res://sprites/rooms/balcon.png" id="2_ltygr"]
 [ext_resource type="PackedScene" uid="uid://d0idjcg45flp4" path="res://src/levels/basik_room.tscn" id="2_ypife"]
 [ext_resource type="PackedScene" uid="uid://ducp7rsjpf40n" path="res://src/player/player.tscn" id="3_4j1ba"]
-[ext_resource type="PackedScene" uid="uid://chfqb1iho3vax" path="res://src/levels/jump_room.tscn" id="3_7ls7j"]
 [ext_resource type="AudioStream" uid="uid://dfpt6x7rpkbie" path="res://sounds/musics/u_gsljpm1sf7-creepy-noise-433020.mp3" id="3_tpyur"]
 [ext_resource type="AudioStream" uid="uid://d0cet2bsgenhl" path="res://sounds/musics/Portal Soundtrack - Procedural Jiggle Bone.mp3" id="4_1tqiw"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_mu531"]
@@ -41,7 +39,6 @@
 [ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="32_f3u0r"]
 [ext_resource type="PackedScene" uid="uid://panlfw5wbxdr" path="res://src/cinematic/cinematic.tscn" id="32_hw218"]
 [ext_resource type="Texture2D" uid="uid://c0veum6e6fh21" path="res://sprites/rooms/groundWALL.png" id="36_q5tgx"]
-[ext_resource type="PackedScene" uid="uid://bvt2l0djqinci" path="res://src/elements/banane.tscn" id="39_ppux1"]
 [ext_resource type="PackedScene" uid="uid://clfwr5px8ecxr" path="res://src/levels/descente_en_enfer.tscn" id="43_cd7fg"]
 [ext_resource type="Texture2D" uid="uid://iyg0q8tiaeyv" path="res://sprites/lol rndr.png" id="44_ppux1"]
 [ext_resource type="Shader" uid="uid://cwj6ts0pc7k6g" path="res://shaders/verticalwhiterain.gdshader" id="46_5ihcl"]
@@ -266,9 +263,6 @@ fill_from = Vector2(1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76snk"]
 size = Vector2(6836, 53)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7157o"]
-size = Vector2(1307.3567, 21.999954)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41y7b"]
 size = Vector2(2002, 45)
 
@@ -377,7 +371,7 @@ size = Vector2(1200, 1114.5)
 size = Vector2(3039, 4235)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hw218"]
-size = Vector2(2116, 1380)
+size = Vector2(1659, 1380)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqu8a"]
 size = Vector2(584, 1512)
@@ -801,14 +795,6 @@ texture = SubResource("GradientTexture2D_01erx")
 
 [node name="Structure" type="Node2D" parent="lvl1" unique_id=837771015]
 
-[node name="first_large_platform" type="Sprite2D" parent="lvl1/Structure" unique_id=1245590761]
-position = Vector2(1966.0001, -983.90405)
-scale = Vector2(0.274, 0.274)
-texture = ExtResource("2_ltygr")
-
-[node name="jump_room" parent="lvl1/Structure" unique_id=864433486 instance=ExtResource("3_7ls7j")]
-position = Vector2(5434, -1407.38)
-
 [node name="sol collision & balcon & door" type="StaticBody2D" parent="lvl1/Structure" unique_id=1344861902]
 position = Vector2(0.2869873, -82.90402)
 
@@ -841,10 +827,6 @@ shape = SubResource("RectangleShape2D_76snk")
 z_index = 1
 position = Vector2(33529.71, 230.90402)
 shape = SubResource("RectangleShape2D_76snk")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="lvl1/Structure/sol collision & balcon & door" unique_id=587111306]
-position = Vector2(1768.035, -850.5)
-shape = SubResource("RectangleShape2D_7157o")
 
 [node name="pt_blueprint" parent="lvl1/Structure/sol collision & balcon & door" unique_id=167292562 instance=ExtResource("16_nfd4m")]
 position = Vector2(12618.713, 175.90402)
@@ -1057,20 +1039,20 @@ polygon = PackedVector2Array(11262, 1124, 11749, 937, 12118, 936, 12439, 843, 12
 [node name="right_pt_zone" type="Node2D" parent="lvl1/Structure" unique_id=868377465]
 position = Vector2(-312, -74)
 
+[node name="platform4" parent="lvl1/Structure/right_pt_zone" unique_id=1640767507 instance=ExtResource("8_ltygr")]
+position = Vector2(11837.888, -1223.098)
+
 [node name="platform" parent="lvl1/Structure/right_pt_zone" unique_id=1356746797 instance=ExtResource("8_ltygr")]
-position = Vector2(11338, -1244.5)
+position = Vector2(11614.427, -1244.5)
 
 [node name="platform2" parent="lvl1/Structure/right_pt_zone" unique_id=505193968 instance=ExtResource("8_ltygr")]
-position = Vector2(11414, -1244.5)
+position = Vector2(11690.427, -1244.5)
 
 [node name="platform3" parent="lvl1/Structure/right_pt_zone" unique_id=1892242715 instance=ExtResource("8_ltygr")]
-position = Vector2(11491, -1244.5)
-
-[node name="platform4" parent="lvl1/Structure/right_pt_zone" unique_id=1640767507 instance=ExtResource("8_ltygr")]
-position = Vector2(11774, -1279)
+position = Vector2(11767.427, -1244.5)
 
 [node name="platform5" parent="lvl1/Structure/right_pt_zone" unique_id=1344378174 instance=ExtResource("8_ltygr")]
-position = Vector2(12076, -1316)
+position = Vector2(12077.331, -1272.077)
 
 [node name="pt_blueprint" parent="lvl1/Structure/right_pt_zone" unique_id=1682163396 instance=ExtResource("16_nfd4m")]
 position = Vector2(12304, -1212)
@@ -1279,45 +1261,17 @@ position = Vector2(8480, -227)
 z_index = 10
 
 [node name="ColorRect" type="ColorRect" parent="lvl1/front_decoration" unique_id=1259339998]
-offset_left = 2116.0
+offset_left = 1805.0908
 offset_top = -1305.0
-offset_right = 2991.0
-offset_bottom = -941.0
+offset_right = 2989.6003
+offset_bottom = -939.134
 color = Color(0.49803922, 0.49803922, 0.49803922, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="lvl1/front_decoration" unique_id=571114535]
-offset_left = 3994.0
+offset_left = 3989.4841
 offset_top = -1308.0
-offset_right = 4777.0
-offset_bottom = -945.0
-color = Color(0.49803922, 0.49803922, 0.49803922, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="lvl1/front_decoration" unique_id=863032133]
-offset_left = 6041.0
-offset_top = -1991.0
-offset_right = 6058.0
-offset_bottom = -1063.0
-color = Color(0.49803922, 0.49803922, 0.49803922, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="lvl1/front_decoration" unique_id=1383255294]
-offset_left = 5717.0
-offset_top = -1574.0
-offset_right = 6758.0
-offset_bottom = -1334.0
-color = Color(0.49803922, 0.49803922, 0.49803922, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="lvl1/front_decoration" unique_id=1897427525]
-offset_left = 9864.0
-offset_top = -1754.0
-offset_right = 10561.0
-offset_bottom = -1330.0
-color = Color(0.49803922, 0.49803922, 0.49803922, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="lvl1/front_decoration" unique_id=1006103133]
-offset_left = 4447.0
-offset_top = -2029.0
-offset_right = 6055.0
-offset_bottom = -1783.0
+offset_right = 5172.664
+offset_bottom = -937.6618
 color = Color(0.49803922, 0.49803922, 0.49803922, 1)
 
 [node name="ColorRect7" type="ColorRect" parent="lvl1/front_decoration" unique_id=282279463]
@@ -1356,10 +1310,10 @@ offset_bottom = 1129.0
 color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
 [node name="ColorRect12" type="ColorRect" parent="lvl1/front_decoration" unique_id=1153662065]
-offset_left = 10559.0
-offset_top = -2034.0
-offset_right = 10988.0
-offset_bottom = -1064.0
+offset_left = 9864.235
+offset_top = -1760.5801
+offset_right = 11258.299
+offset_bottom = -1327.0647
 color = Color(0.49803922, 0.49803922, 0.49803922, 1)
 
 [node name="Line2D" type="Line2D" parent="lvl1/front_decoration" unique_id=1225446153]
@@ -1393,7 +1347,7 @@ text = "La réalité est une conspiration Reality is FAKE Tout est faux Seul le 
 horizontal_alignment = 3
 
 [node name="ouvriront" type="RichTextLabel" parent="lvl1" unique_id=1013986313]
-offset_left = 1134.0
+offset_left = 1220.515
 offset_top = -978.0
 offset_right = 1719.0
 offset_bottom = -838.0
@@ -1405,7 +1359,6 @@ horizontal_alignment = 3
 [node name="tronc_tiles" type="TileMapLayer" parent="lvl1" unique_id=512305397]
 z_index = 15
 scale = Vector2(0.75, 0.75)
-tile_map_data = PackedByteArray("AAAfBFn/AAAIAAoAAACMA+P/AAAKAAoAAACQA4//AAAOAAoAAADHAOL/AAAOAAoAAADKAI3/AAAOAAoAAACTAzf/AAAOAAoAAAD3Adf/AAAKAAoAAADuAS0AAAAOAAoAAAA=")
 tile_set = SubResource("TileSet_gw2wf")
 
 [node name="feuillagesuspendu_tiles" type="TileMapLayer" parent="lvl1" unique_id=1184582560]
@@ -1413,14 +1366,14 @@ z_index = 15
 material = SubResource("ShaderMaterial_k4edk")
 rotation = -3.1415925
 scale = Vector2(0.75, 0.75)
-tile_map_data = PackedByteArray("AACA/n4AAAALAAEAAACE/m4AAAALAAEAAABy/n4AAAAHAAEAAAAG/o0AAAAHAAEAAAC3+zIAAAADAA8AAACy+zIAAAADAA8AAADB+yoAAAAJAA4AAAA=")
+tile_map_data = PackedByteArray(0, 0, 196, 251, 60, 0, 0, 0, 7, 0, 1, 0, 0, 0, 208, 251, 80, 0, 0, 0, 7, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_lqu8a")
 
 [node name="herbes_tiles" type="TileMapLayer" parent="lvl1" unique_id=72242032]
 z_index = 15
 material = SubResource("ShaderMaterial_vb8r4")
 scale = Vector2(0.75, 0.75)
-tile_map_data = PackedByteArray("AADCAAIAAAAMABwAAACDAwIAAAAMABwAAAB0AbX/AAAMABwAAADYA0UAAAAMABUAAAA=")
+tile_map_data = PackedByteArray(0, 0, 216, 3, 69, 0, 0, 0, 12, 0, 21, 0, 0, 0, 231, 3, 67, 0, 0, 0, 12, 0, 28, 0, 0, 0, 36, 4, 118, 255, 0, 0, 12, 0, 23, 0, 0, 0)
 tile_set = SubResource("TileSet_k4edk")
 
 [node name="cam_zones" type="Node2D" parent="lvl1" unique_id=1964456640]
@@ -1442,7 +1395,7 @@ position = Vector2(-452.5, 5323.5)
 shape = SubResource("RectangleShape2D_k4edk")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="lvl1/cam_zones/no_bottom_offset_zone" unique_id=78418315]
-position = Vector2(12019, -1220)
+position = Vector2(12247.5, -1220)
 shape = SubResource("RectangleShape2D_hw218")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="lvl1/cam_zones/no_bottom_offset_zone" unique_id=2140334494]
@@ -2023,9 +1976,6 @@ shape = SubResource("RectangleShape2D_73yqq")
 [node name="cadavre" parent="." unique_id=258405330 instance=ExtResource("47_5ihcl")]
 position = Vector2(-503.16162, -11202.822)
 scale = Vector2(0.55, 0.55)
-
-[node name="banane" parent="." unique_id=935544302 instance=ExtResource("39_ppux1")]
-position = Vector2(12862.587, -1523.9225)
 
 [node name="bonus2" parent="." unique_id=715804290 instance=ExtResource("15_fynux")]
 position = Vector2(1288.7085, -433.7632)

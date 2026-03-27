@@ -87,11 +87,11 @@ func music_player_logic():
 		index_music=0
 		label_music="portal"
 		
-	if player.position.y > 372 :
-		if player.global_position.x > 14081 and player.global_position.x < 27444:
+	if player.global_position.x > 14081 :
+		if player.position.y > 372 and player.global_position.y < 5455:
 			index_music=1
 			label_music="noise"
-		if player.global_position.x > 27444:
+		if player.global_position.y > 5455:
 			index_music=3
 			label_music="intense"
 			
