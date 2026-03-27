@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bqk6rdvd68f2m" path="res://sprites/rooms/escalier.png" id="1_xoqhc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xoqhc"]
-size = Vector2(1101, 200)
+size = Vector2(1101, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4p2d"]
 size = Vector2(393, 127.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lr8qc"]
-size = Vector2(1252, 400)
+size = Vector2(1252, 25)
 
 [node name="escalier_room" type="Node2D" unique_id=274503240]
 
@@ -21,7 +21,7 @@ texture = ExtResource("1_xoqhc")
 position = Vector2(-214, -174)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2123248166]
-position = Vector2(-814.5, 740)
+position = Vector2(-814.5, 654.5)
 shape = SubResource("RectangleShape2D_xoqhc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1867713593]
@@ -32,9 +32,5 @@ position = Vector2(855.5, 58)
 shape = SubResource("RectangleShape2D_x4p2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=483649387]
-position = Vector2(-426, 860)
-shape = SubResource("RectangleShape2D_lr8qc")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=105785471]
-position = Vector2(629, 920)
+position = Vector2(-426, 672.5)
 shape = SubResource("RectangleShape2D_lr8qc")

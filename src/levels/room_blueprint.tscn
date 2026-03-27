@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://c07ghb70rt8ft" path="res://src/levels/escalier_room.tscn" id="12_7ls7j"]
 [ext_resource type="PackedScene" uid="uid://c00nse01mwe63" path="res://src/platforms/laser_trap.tscn" id="13_f4kdv"]
 [ext_resource type="PackedScene" uid="uid://dhihe4rrnqw3d" path="res://src/levels/transition_rooms.tscn" id="13_h1car"]
-[ext_resource type="PackedScene" uid="uid://jitchrxcsgsf" path="res://src/elements/ball.tscn" id="14_k548o"]
 [ext_resource type="PackedScene" uid="uid://cekaf18v66rc3" path="res://src/levels/portal_room.tscn" id="14_lqwi2"]
 [ext_resource type="PackedScene" uid="uid://dhmslis0y0ejr" path="res://src/levels/blackwhite_room.tscn" id="15_1rkoo"]
 [ext_resource type="PackedScene" uid="uid://d2iu76n7i4seb" path="res://src/bonus/bonus.tscn" id="15_fynux"]
@@ -903,10 +902,6 @@ position = Vector2(10407, 1296)
 [node name="escalier_room2" parent="lvl1/Structure" unique_id=1021733173 instance=ExtResource("12_7ls7j")]
 position = Vector2(629, 2409)
 
-[node name="ball" parent="lvl1/Structure/escalier_room2" unique_id=91751916 instance=ExtResource("14_k548o")]
-position = Vector2(229, 520)
-starting_vel = Vector2(-50, 0)
-
 [node name="transition_rooms" parent="lvl1/Structure" unique_id=645547803 instance=ExtResource("13_h1car")]
 position = Vector2(4182, 2236)
 
@@ -1208,13 +1203,13 @@ portal_reverse_color = true
 [node name="fractals" type="Node2D" parent="lvl1" unique_id=1952825093]
 
 [node name="fractale" parent="lvl1/fractals" unique_id=764819064 instance=ExtResource("17_p2ed6")]
-position = Vector2(8112, -2092)
+position = Vector2(8111.229, -2097.3977)
 
 [node name="fractale2" parent="lvl1/fractals" unique_id=653933748 instance=ExtResource("17_p2ed6")]
-position = Vector2(3922, -195)
+position = Vector2(3931.5588, -199.34496)
 
 [node name="fractale3" parent="lvl1/fractals" unique_id=754536176 instance=ExtResource("17_p2ed6")]
-position = Vector2(12018, -2740)
+position = Vector2(12018.318, -2746.3728)
 
 [node name="gravas" type="Node2D" parent="lvl1" unique_id=2043255634]
 
@@ -1366,14 +1361,13 @@ z_index = 15
 material = SubResource("ShaderMaterial_k4edk")
 rotation = -3.1415925
 scale = Vector2(0.75, 0.75)
-tile_map_data = PackedByteArray(0, 0, 196, 251, 60, 0, 0, 0, 7, 0, 1, 0, 0, 0, 208, 251, 80, 0, 0, 0, 7, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_lqu8a")
 
 [node name="herbes_tiles" type="TileMapLayer" parent="lvl1" unique_id=72242032]
 z_index = 15
 material = SubResource("ShaderMaterial_vb8r4")
 scale = Vector2(0.75, 0.75)
-tile_map_data = PackedByteArray(0, 0, 216, 3, 69, 0, 0, 0, 12, 0, 21, 0, 0, 0, 231, 3, 67, 0, 0, 0, 12, 0, 28, 0, 0, 0, 36, 4, 118, 255, 0, 0, 12, 0, 23, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 216, 3, 69, 0, 0, 0, 12, 0, 21, 0, 0, 0, 231, 3, 67, 0, 0, 0, 12, 0, 28, 0, 0, 0, 36, 4, 118, 255, 0, 0, 12, 0, 23, 0, 0, 0, 71, 4, 224, 255, 0, 0, 12, 0, 21, 0, 0, 0, 68, 4, 212, 255, 0, 0, 12, 0, 23, 0, 0, 0)
 tile_set = SubResource("TileSet_k4edk")
 
 [node name="cam_zones" type="Node2D" parent="lvl1" unique_id=1964456640]
@@ -1892,11 +1886,11 @@ position = Vector2(26036.512, 7250.186)
 scale = Vector2(4, 4)
 
 [node name="platform9" parent="lvl5/PTS" unique_id=945981466 instance=ExtResource("8_ltygr")]
-position = Vector2(26702.785, 7654.544)
+position = Vector2(26702.785, 7633.108)
 scale = Vector2(4, 4)
 
 [node name="platform10" parent="lvl5/PTS" unique_id=18215513 instance=ExtResource("8_ltygr")]
-position = Vector2(27208.234, 8022.142)
+position = Vector2(27208.234, 7994.86)
 scale = Vector2(4, 4)
 
 [node name="platform11" parent="lvl5/PTS" unique_id=1582294664 instance=ExtResource("8_ltygr")]

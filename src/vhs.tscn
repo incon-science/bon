@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dxih6l1o6qkiu"]
+
+[ext_resource type="PackedScene" uid="uid://dy80i5m5jbd5" path="res://src/levels/room_blueprint.tscn" id="1_j0um4"]
+[ext_resource type="Shader" uid="uid://c22exyahuh2n4" path="res://shaders/vhs.gdshader" id="2_estqd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_78vs0"]
+shader = ExtResource("2_estqd")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1280, 720)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 0.0050000477375000685
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.50000002375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
+
+[node name="VHS" type="Node2D" unique_id=1443404914]
+
+[node name="room_blueprint" parent="." unique_id=1528742533 instance=ExtResource("1_j0um4")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1999686670]
+layer = 1000
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1507170664]
+material = SubResource("ShaderMaterial_78vs0")
+offset_right = 1280.0
+offset_bottom = 720.0

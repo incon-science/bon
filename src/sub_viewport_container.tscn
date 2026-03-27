@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bls0whif7nx3y"]
+
+[ext_resource type="PackedScene" uid="uid://dy80i5m5jbd5" path="res://src/levels/room_blueprint.tscn" id="2_wcyps"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" unique_id=379767675]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1484945047]
+size = Vector2i(1280, 720)
+
+[node name="room_blueprint" parent="SubViewport" unique_id=1528742533 instance=ExtResource("2_wcyps")]
