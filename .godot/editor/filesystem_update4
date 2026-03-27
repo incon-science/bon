@@ -9,3 +9,4 @@ res://src/levels/room_blueprint.gd
 res://src/elements/banane.tscn
 res://src/levels/blackwhite_room.tscn
 res://src/global.gd
+res://src/player/player.gd

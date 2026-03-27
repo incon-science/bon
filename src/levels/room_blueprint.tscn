@@ -979,7 +979,7 @@ position = Vector2(3743, -276)
 position = Vector2(3902, -322)
 
 [node name="pt_blueprint4" parent="lvl1/Structure/platformssecret" unique_id=475347106 instance=ExtResource("16_nfd4m")]
-position = Vector2(4089, -314)
+position = Vector2(4053.0632, -259.42896)
 
 [node name="pt_blueprint5" parent="lvl1/Structure/platformssecret" unique_id=603663916 instance=ExtResource("16_nfd4m")]
 position = Vector2(4203, -160)

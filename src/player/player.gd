@@ -497,7 +497,7 @@ func sound_animation() -> void:
 			
 var last_floor_pos : Vector2
 func respawn_logic():
-	if is_on_floor_only():
+	if is_on_floor_only() and !impact_dmg:
 		if velocity.x >0 :
 			last_floor_pos = position - Vector2(30,0)
 		if velocity.x <0 :
