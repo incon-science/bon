@@ -374,7 +374,7 @@ func portal_logic():
 
 func sprint_logic():
 	if Input.is_action_pressed("dash") and !(state_machine.active_state is DashState):
-		max_speed = 389.0*2
+		max_speed = 389.0*1.5
 	else:
 		max_speed = 389
 

@@ -521,11 +521,11 @@ fill_to = Vector2(0.85714287, 0.14285715)
 metadata/_snap_enabled = true
 metadata/_snap_count = 3
 
-[sub_resource type="Gradient" id="Gradient_hja65"]
+[sub_resource type="Gradient" id="Gradient_o04tx"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5shm8"]
-gradient = SubResource("Gradient_hja65")
+gradient = SubResource("Gradient_o04tx")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.15)

@@ -26,7 +26,7 @@ func _ready() -> void:
 			dashsprite.show()
 	if !Global.doublejump_unlock:
 		if type_bonus == "doublejump":
-			info_bonus.text = "[color=#FFFFFF]You can now double jump! KILL IT![/color]"
+			info_bonus.text = "[color=#FFFFFF]You can now double jump![/color]"
 			doublejump.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,9 +1,13 @@
-res://src/vhs.tscn
+res://src/levels/blackwhite_room.tscn
 res://addons/phantom_camera/themes/theme.tres
 res://shaders/damage_impact.gdshader
 res://shaders/verticalwhiterain.gdshader
 res://shaders/vhs.gdshader
 res://shaders/starfield.gdshader
 res://shaders/fog.gdshader
+res://src/levels/room_blueprint.tscn
+res://src/player/player.tscn
+res://src/player/player.gd
 res://src/global.gd
-res://src/platforms/laser_trap.tscn
+res://src/bonus/bonus.gd
+res://src/levels/bouche_degout.tscn

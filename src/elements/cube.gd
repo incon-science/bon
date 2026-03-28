@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 		if touche != touche_prec :
 			audio_stream_player_2d.play()
 			touche_prec.modulate.a = 1
-			touche.modulate.a = 0.3
+			touche.modulate.a = 0.5
 			touche_prec = touche
 			
 		if Input.is_action_just_released("jump"):

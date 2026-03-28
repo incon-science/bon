@@ -53,7 +53,7 @@ func _ready() -> void:
 	
 	#to avoid intro de merde
 	if !Global.debug_mod:
-		canvas_modulate.hide()
+		#canvas_modulate.hide()
 		player.hide()
 		player.process_mode = Node.PROCESS_MODE_DISABLED
 	

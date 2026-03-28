@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0jh5kowoxb5m"
-valid=false
+uid="uid://cujs8030pk2s2"
+path="res://.godot/imported/alonge_tun_front.png-12f6710986977b335cead6851fd6a826.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/rooms/frontputaindemerdedeblaxckwhite.png"
+source_file="res://sprites/rooms/alonge_tun_front.png"
+dest_files=["res://.godot/imported/alonge_tun_front.png-12f6710986977b335cead6851fd6a826.ctex"]
 
 [params]
 

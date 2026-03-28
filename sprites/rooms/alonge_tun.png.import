@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjbo073mtj5pc"
-valid=false
+uid="uid://2ys01tbwn8wf"
+path="res://.godot/imported/alonge_tun.png-8ca59d8b99b605b7c671e13680037bf5.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/rooms/TUNNELFRONT.png"
+source_file="res://sprites/rooms/alonge_tun.png"
+dest_files=["res://.godot/imported/alonge_tun.png-8ca59d8b99b605b7c671e13680037bf5.ctex"]
 
 [params]
 

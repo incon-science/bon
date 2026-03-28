@@ -40,7 +40,6 @@
 [ext_resource type="Texture2D" uid="uid://c0veum6e6fh21" path="res://sprites/rooms/groundWALL.png" id="36_q5tgx"]
 [ext_resource type="PackedScene" uid="uid://clfwr5px8ecxr" path="res://src/levels/descente_en_enfer.tscn" id="43_cd7fg"]
 [ext_resource type="Texture2D" uid="uid://iyg0q8tiaeyv" path="res://sprites/lol rndr.png" id="44_ppux1"]
-[ext_resource type="Shader" uid="uid://cwj6ts0pc7k6g" path="res://shaders/verticalwhiterain.gdshader" id="46_5ihcl"]
 [ext_resource type="PackedScene" uid="uid://bdd03axytgixu" path="res://src/platforms/damage_block.tscn" id="46_7f7j5"]
 [ext_resource type="PackedScene" uid="uid://b3fmlkgwi6rw5" path="res://src/platforms/2_pt_move.tscn" id="47_1tqiw"]
 [ext_resource type="PackedScene" uid="uid://denjct5e4x1jd" path="res://src/elements/cadavre.tscn" id="47_5ihcl"]
@@ -408,6 +407,17 @@ size = Vector2(1446.75, 646.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cd7fg"]
 size = Vector2(487, 644.5)
 
+[sub_resource type="Gradient" id="Gradient_hja65"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ppux1"]
+gradient = SubResource("Gradient_hja65")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.85, 0.15)
+metadata/_snap_enabled = true
+metadata/_snap_count = 20
+
 [sub_resource type="Gradient" id="Gradient_1tqiw"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_73yqq"]
@@ -416,35 +426,22 @@ height = 5000
 fill_to = Vector2(0, 1)
 
 [sub_resource type="Gradient" id="Gradient_tkwxf"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+colors = PackedColorArray(0.2592937, 0.2592937, 0.2592937, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_k2shy"]
 gradient = SubResource("Gradient_tkwxf")
-width = 2000
-height = 1
-fill_from = Vector2(1, 1)
-fill_to = Vector2(0, 1)
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.2, 0.8)
+metadata/_snap_enabled = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ihcl"]
 size = Vector2(2560.488, 4246.0107)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1tqiw"]
 size = Vector2(9026.59, 4673.42)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7f7j5"]
-shader = ExtResource("46_5ihcl")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/speed = 1.61999996378976
-shader_parameter/density = 100.0
-shader_parameter/compression = 0.99999998137332
-shader_parameter/trail_size = 5.0
-shader_parameter/brightness = 10.0
-
-[sub_resource type="Gradient" id="Gradient_5ihcl"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1tqiw"]
-gradient = SubResource("Gradient_5ihcl")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppux1"]
 size = Vector2(26472.516, 3367.3008)
@@ -471,12 +468,12 @@ color = Color(0.25929385, 0.25929365, 0.2592938, 1)
 [node name="Player" parent="." unique_id=2070335124 instance=ExtResource("3_4j1ba")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(-1.4204102, -2902.4412)
+position = Vector2(0, -2876)
 
 [node name="cam" type="Node2D" parent="." unique_id=1498018793 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(48.57959, -2630)
+position = Vector2(50, -2630)
 script = ExtResource("4_mu531")
 priority = 1
 follow_mode = 2
@@ -496,7 +493,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="cam2" type="Node2D" parent="." unique_id=390199709 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-51.42041, -2630)
+position = Vector2(-50, -2630)
 script = ExtResource("4_mu531")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -515,7 +512,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="camoffesetbottom" type="Node2D" parent="." unique_id=1643240695 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(48.57959, -2902.4412)
+position = Vector2(50, -2876)
 script = ExtResource("4_mu531")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -531,7 +528,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="camoffesetbottom2" type="Node2D" parent="." unique_id=277007732 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-51.42041, -2902.4412)
+position = Vector2(-50, -2876)
 script = ExtResource("4_mu531")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -547,7 +544,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="zoomcam" type="Node2D" parent="." unique_id=1299573748 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-1.4204102, -3062.4412)
+position = Vector2(0, -3036)
 script = ExtResource("4_mu531")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -564,7 +561,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1039615960]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(48.57959, -2630)
+position = Vector2(50, -2630)
 process_callback = 0
 limit_left = -2712
 limit_top = -2990
@@ -695,8 +692,8 @@ offset_right = 25095.822
 offset_bottom = 2732.2651
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 72
-text = "Arrête de t'attacher à la réalité
-                             ...IT only requires one signal"
+text = " 
+                             IT only requires one signal"
 
 [node name="door_reverse" parent="lvl4" unique_id=1047860162 instance=ExtResource("15_wxahx")]
 position = Vector2(26042, 2488)
@@ -1718,6 +1715,12 @@ text = "."
 horizontal_alignment = 3
 vertical_alignment = 1
 
+[node name="PointLight2D2" type="PointLight2D" parent="intro" unique_id=471561365]
+position = Vector2(0, -2836.2952)
+color = Color(1.3945211, 1.3945211, 1.3945211, 1)
+texture = SubResource("GradientTexture2D_ppux1")
+texture_scale = 17.35
+
 [node name="lvl5" type="Node2D" parent="." unique_id=574120747]
 
 [node name="TextureRect2" type="TextureRect" parent="lvl5" unique_id=584712830]
@@ -1727,18 +1730,11 @@ offset_right = 32800.75
 offset_bottom = 10489.748
 texture = SubResource("GradientTexture2D_73yqq")
 
-[node name="ColorRect" type="ColorRect" parent="lvl5" unique_id=117778481]
-offset_left = 30794.354
-offset_top = 7779.6533
-offset_right = 33479.684
-offset_bottom = 12267.286
-color = Color(0, 0, 0, 1)
-
 [node name="TextureRect3" type="TextureRect" parent="lvl5" unique_id=406025307]
-offset_left = 28794.03
-offset_top = 8015.3677
-offset_right = 30794.03
-offset_bottom = 12321.928
+offset_left = 29247.154
+offset_top = 8219.485
+offset_right = 31257.11
+offset_bottom = 10229.44
 texture = SubResource("GradientTexture2D_k2shy")
 
 [node name="camzoneoffset_lvl5" type="Area2D" parent="lvl5" unique_id=551414329]
@@ -1759,20 +1755,11 @@ texture = ExtResource("44_ppux1")
 [node name="descente_en_enfer" parent="lvl5" unique_id=152367028 instance=ExtResource("43_cd7fg")]
 position = Vector2(27758.86, 2799.0413)
 
-[node name="TextureRect" type="TextureRect" parent="lvl5" unique_id=1581605215]
-visible = false
-material = SubResource("ShaderMaterial_7f7j5")
-offset_left = 5554.709
-offset_top = 9528.705
-offset_right = 10513.365
-offset_bottom = 12194.586
-texture = SubResource("GradientTexture1D_1tqiw")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="lvl5" unique_id=1211112175]
-offset_left = 26558.42
-offset_top = 6845.608
-offset_right = 26956.664
-offset_bottom = 7891.7905
+offset_left = 995.0259
+offset_top = -2851.1023
+offset_right = 1393.27
+offset_bottom = -1804.9197
 theme_override_colors/default_color = Color(0.30323282, 0.30323282, 0.30323288, 1)
 theme_override_font_sizes/normal_font_size = 34
 text = "Oui, il y a véritablement un mystère à pénétrer. Si il faut te violer le cerveau à l'infini pour que tu comprennes..."
@@ -1886,7 +1873,7 @@ position = Vector2(26036.512, 7250.186)
 scale = Vector2(4, 4)
 
 [node name="platform9" parent="lvl5/PTS" unique_id=945981466 instance=ExtResource("8_ltygr")]
-position = Vector2(26702.785, 7633.108)
+position = Vector2(26702.785, 7608.942)
 scale = Vector2(4, 4)
 
 [node name="platform10" parent="lvl5/PTS" unique_id=18215513 instance=ExtResource("8_ltygr")]
@@ -1976,7 +1963,7 @@ position = Vector2(1288.7085, -433.7632)
 type_bonus = "dash"
 
 [node name="sprint_bonus" parent="." unique_id=1577787271 instance=ExtResource("15_fynux")]
-position = Vector2(4132.574, 2900.3467)
+position = Vector2(3821.1042, 4017.8857)
 type_bonus = "sprint"
 
 [node name="bonus" parent="." unique_id=1732226817 instance=ExtResource("15_fynux")]
