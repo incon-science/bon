@@ -4,6 +4,7 @@ extends Node2D
 @onready var locklayer: CanvasLayer = $locklayer
 @onready var animation_player: AnimationPlayer = $Sprite2D/AnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var ouverture: AudioStreamPlayer2D = $ouverture
 
 
 
@@ -76,13 +77,16 @@ func _process(delta: float) -> void:
 			
 	if res.text == "1972":
 		if !Global.cube_opened:
+			Global.cube_opened = true
+			player.dead_ = false
+			ouverture.play()
+			
+			
 			fadeoutdigit.play("new_animation")
 			await get_tree().create_timer(1).timeout
 			locklayer.hide()
 			
 			animation_player.play("up_door")
-			Global.cube_opened = true
-			player.dead_ = false
 		
 func _on_openlockzone_body_entered(body: Node2D) -> void:
 	if body is Player :

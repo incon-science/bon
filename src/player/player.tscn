@@ -476,7 +476,7 @@ animations = [{
 shader = ExtResource("18_o04tx")
 shader_parameter/hit_effect = 0.50000002375
 shader_parameter/shake_intensity = 10.0
-shader_parameter/flash_speed = 300.0
+shader_parameter/flash_speed = 600.0
 shader_parameter/flash_color = Color(1, 0, 0, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dpt0q"]
@@ -902,11 +902,13 @@ stream = SubResource("AudioStreamRandomizer_h0enb")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=479851347]
 position = Vector2(0, -32)
 color = Color(1.3945211, 1.3945211, 1.3945211, 1)
+energy = 0.8
 texture = SubResource("GradientTexture2D_hja65")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1117608192]
 position = Vector2(0, -41)
 color = Color(1.3945211, 1.3945211, 1.3945211, 1)
+energy = 0.8
 texture = SubResource("GradientTexture2D_5shm8")
 texture_scale = 17.35
 

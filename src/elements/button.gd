@@ -3,6 +3,8 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $Sprite2D2/AnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+@export var infinite_press : bool = false
+
 var pushed : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -24,4 +26,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
-	pass
+	if infinite_press :
+		animation_player.play("new_animation_reverse")
+		pushed = false

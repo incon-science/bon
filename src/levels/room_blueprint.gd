@@ -8,10 +8,11 @@ extends Node2D
 @onready var cam_2: PhantomCamera2D = %cam2
 @onready var camoffesetbottom: PhantomCamera2D = $camoffesetbottom
 @onready var camoffesetbottom_2: PhantomCamera2D = %camoffesetbottom2
+@onready var dezoomlvl_7: PhantomCamera2D = $dezoomlvl7
+
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-@onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
 @onready var intro: Node2D = $intro
 @onready var lvl_1: Node2D = $lvl1
@@ -47,13 +48,12 @@ func creer_ground():
 func _ready() -> void:
 	display_list_cadavre()
 	
-	if !Global.debug_mod: player.global_position = Vector2(0,-2876.0)
+	if !Global.debug_mod: player.global_position = Vector2(0,-2871)
 	creer_ground()
 
 	
 	#to avoid intro de merde
 	if !Global.debug_mod:
-		#canvas_modulate.hide()
 		player.hide()
 		player.process_mode = Node.PROCESS_MODE_DISABLED
 	
@@ -95,10 +95,14 @@ func music_player_logic():
 			index_music=3
 			label_music="intense"
 			
+	if label_music == "portal" :
+		if Global.blue_prince:
+			index_music=4
+			label_music="blue_prince"
+			
 	if audio_stream_player.get_stream_playback().get_current_clip_index() !=index_music:
 		audio_stream_player.get_stream_playback().switch_to_clip_by_name(label_music)
 		audio_stream_player.volume_db=volume_music
-	
 	
 func slowvoid_logic():
 	var limit = - 5555
@@ -110,12 +114,20 @@ func slowvoid_logic():
 		Engine.time_scale = 1 - diff
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var intro_visible : bool = true
 func _process(delta: float) -> void:
 	if player.is_on_floor():
-		intro.hide()
-		intro.process_mode = Node.PROCESS_MODE_DISABLED
-		cam.limit_top = -10000000
-		cam_2.limit_top = -10000000
+		if intro_visible:
+			intro_visible = false
+			intro.hide()
+			intro.process_mode = Node.PROCESS_MODE_DISABLED
+			cam.limit_top = -10000000
+			cam_2.limit_top = -10000000
+		
+		var tween = get_tree().create_tween()
+		tween.tween_property(player.point_light_2d, "energy", 1.0, 10.0)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(player.point_light_2d_2, "energy", 1.0, 10.0)
 
 	if !audio_stream_player.playing:
 		audio_stream_player.play()
@@ -162,9 +174,12 @@ func _on_camzoneoffset_lvl_5_body_exited(body: Node2D) -> void:
 	if body is Player : 
 		camoffesetbottom.priority = 0
 		camoffesetbottom_2.priority = 0
+func _on_zoomzonelvl_7_body_entered(body: Node2D) -> void:
+	if body is Player : dezoomlvl_7.priority = 10
+func _on_zoomzonelvl_7_body_exited(body: Node2D) -> void:
+	if body is Player : dezoomlvl_7.priority = 0
 	
 func _on_cinematic_animation_finished() -> void:
-	canvas_modulate.show()
 	player.show()
 	player.process_mode = Node.PROCESS_MODE_INHERIT
 
@@ -204,4 +219,34 @@ func _on_change_scene_zone_2_lvl_3_body_entered(body: Node2D) -> void:
 func _on_deathzone_body_entered(body: Node2D) -> void:
 	if body is Player:
 		player.respawn()
+		
+		
+		
+		
+		
+		
+		
+@onready var triangles: Node2D = $intro/triangles
+@onready var cinematic: AnimatedSprite2D = $intro/cinematic
+
+@onready var cadavreplayer: CharacterBody2D = $cadavreplayer
+
+func _on_button_body_entered_specific_last_btn_blue_print(body: Node2D) -> void:
+	if body is Player:
+		Global.blue_prince = true
+		
+		var new_cinematic = cinematic.duplicate()
+		$".".add_child(new_cinematic)  
+		
+		await get_tree().create_timer(5).timeout
+		
+		var cad_player_ = cadavreplayer.duplicate()
+		cad_player_.global_position = Vector2(0,-2904)
+		#cad_player_.global_position.y -= 36
+		$".".add_child(cad_player_)  
+		cad_player_.set_default_anim()
+		
+		new_cinematic.queue_free()
+		
+		
 		

@@ -532,7 +532,7 @@ func respawn():
 var impact_dmg:bool=false
 func impact_logic_anim():
 	if impact_dmg :
-		Engine.time_scale = 0.02
+		Engine.time_scale = 0.01
 		duplicate_sprite()
 		sprite.hide()
 		sprite_shader.show()
@@ -547,6 +547,7 @@ func duplicate_sprite():
 @onready var deathspriteanim: AnimatedSprite2D = $deathspriteanim
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var restart_txt: Node2D = $restart_txt
+@onready var point_light_2d_2: PointLight2D = $PointLight2D2
 
 var dead_ : bool = false
 func play_death_anim():

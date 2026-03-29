@@ -1,6 +1,6 @@
 extends Node
 
-var debug_mod:bool=true
+var debug_mod:bool=false
 
 var nb_fractal:int = 0
 
@@ -18,6 +18,7 @@ var banane:bool =false
 
 var list_des_morts: Array[Vector2]
 
+var blue_prince : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,6 +36,8 @@ func _process(delta: float) -> void:
 		get_tree().reload_current_scene()
 		nb_fractal = 0
 		banane=false
+		
+
 		
 		
 		

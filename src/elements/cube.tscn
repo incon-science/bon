@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bqg5am60828ng" path="res://sprites/vaulti_front.png" id="3_1xtlu"]
 [ext_resource type="Texture2D" uid="uid://db82fej7xukpf" path="res://sprites/lock.png" id="4_1xtlu"]
 [ext_resource type="AudioStream" uid="uid://dk5kioakoosjv" path="res://sounds/creatorshome-digital-click-357350.mp3" id="6_0rqph"]
+[ext_resource type="AudioStream" uid="uid://b2t86f4qbq3mr" path="res://sounds/dragon-studio-menu-open-433000.mp3" id="7_pxktc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sljeo"]
 size = Vector2(15.999985, 98)
@@ -281,5 +282,8 @@ shape = SubResource("RectangleShape2D_0rqph")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=639615716]
 stream = SubResource("AudioStreamRandomizer_0rqph")
+
+[node name="ouverture" type="AudioStreamPlayer2D" parent="." unique_id=1867146132]
+stream = ExtResource("7_pxktc")
 
 [connection signal="body_entered" from="openlockzone" to="." method="_on_openlockzone_body_entered"]

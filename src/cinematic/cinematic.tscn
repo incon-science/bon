@@ -602,10 +602,6 @@ region = Rect2(2160, 2640, 432, 240)
 atlas = ExtResource("1_wi23b")
 region = Rect2(2592, 2640, 432, 240)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7oes4"]
-atlas = ExtResource("1_wi23b")
-region = Rect2(3024, 2640, 432, 240)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_7oes4"]
 animations = [{
 "frames": [{
@@ -1058,9 +1054,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rha1v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7oes4")
 }],
 "loop": false,
 "name": &"new_animation",
